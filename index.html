@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Ulrich</title>
+    <link rel="stylesheet" href="monPortolio.css">
+    <style type="text/css">
+        /* Reset de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #3498db;  /* Couleur principale (bleu) */
+    --dark: #2c3e50;
+    --light: #ecf0f1;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    height: 1.6;
+    color: #333;
+}
+
+.acceuil ::hover{
+    color: var(--primary);
+}
+
+/* Navigation */
+nav {
+    background: var(--dark);
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+}
+
+/* Héros */
+.hero {
+    background: linear-gradient(135deg, var(--dark), var(--primary));
+    color: white;
+    text-align: center;
+    padding: 8rem 1rem;
+}
+
+.highlight {
+    color: var(--primary);
+}
+
+/* Sections */
+.section {
+    padding: 4rem 1rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s, transform 0.6s;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Projets */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.project-card {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+/* Bouton */
+.btn {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 1rem;
+}
+
+.btm{
+    display: inline-block;
+    color: white;
+    border-radius: 5px;
+    width: 500px;
+    height: ;
+}
+.btm input{
+    height: 100px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home" class="acceuil">Accueil</a></li>
+            <li><a href="#about" class="acceuil">À propos</a></li>
+            <li><a href="#projects" class="acceuil">Projets</a></li>
+            <li><a href="#contact" class="acceuil">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Section Héros -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Je suis <span class="highlight">TSANGUE TSALLA Ulrich Stephane</span></h1>
+            <p class="subtitle">Etudiant en Informatique</p>
+            <a href="#projects" class="btn">Voir mes projets</a>
+        </div>
+    </section>
+
+    <!-- Section À propos -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2>À propos</h2>
+            <p>Passionné par l'informatique depuis 2020, je crée des plates formes numeriques.</p>
+            <div class="skills">
+                <span class="skill">HTML/CSS</span>
+                <span class="skill">JavaScript</span>
+                <span class="skill">PHP</span>
+                <span class="skill">LARAVEL</span>
+                <span class="skill">REACTJS</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Projets -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2>Mes Projets</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Creation d'un site web de E-Commerce</h3>
+                    <p>Ce si a ete concu pour repondre au probleme qui se pose lors de l'achat des equipement informatique notamment le prix et la garantie des produits</p>
+                    <a href="MON_SITE/page1.html" class="btn">Détails</a>
+                </div>
+                <div class="project-card">
+                    <h3>Creation d'une plate forme de E-Learning</h3>
+                    <p>Dans le but de numeriser et de developper l'apprentissage, il nous ai venu a l'esprit de concevoir un site web respectant essentiellemeny les normes du CRUD</p>
+                    <a href="#" class="btn">Details</a>
+                </div>
+                <div class="project-card">
+                    <h3>Analyse et concetion d'une bibliotheque numerique</h3>
+                    <p>Au vu d'apporter des solution au problemes qui se posent lors de l'emprunt d'un livre a la blibliothe de l'etablissement, il nous a ete demande de concevoir une bibliotheque numerique</p>
+                    <a href="#" class="btn">Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="section">
+        <div class="container">
+        <i class="fa fa-phone" aria-hidden="true"><h2>Contactez-moi</h2></i>
+            <form id="contact-form">
+                <input type="text" placeholder="Nom" required class="btm"><br>
+                <input type="email" placeholder="Email" required class="btm"><br>
+                <textarea placeholder="Message" required class="btm"></textarea><br>
+                <button type="submit" class="btn">Envoyer</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="monPortolio.js" type="text/JavaScript">
+        // Navigation fluide
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        target.scrollIntoView({ behavior: 'smooth' });
+    });
+});
+
+// Animation au scroll
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.section').forEach(section => {
+    observer.observe(section);
+});
+
+// Formulaire de contact
+document.getElementById('contact-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert('Message envoyé (simulation) !');
+    e.target.reset();
+});
+
+// Dark Mode (optionnel)
+const themeToggle = document.createElement('button');
+themeToggle.textContent = '🌙';
+themeToggle.style.position = 'fixed';
+themeToggle.style.bottom = '20px';
+themeToggle.style.right = '20px';
+document.body.appendChild(themeToggle);
+
+themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    themeToggle.textContent = document.body.classList.contains('dark-mode') ? '☀' : '🌙';
+});
+    </script>
+</body>
+</html>
